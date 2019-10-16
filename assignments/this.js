@@ -46,3 +46,19 @@ console.log(impactWarner.message);
 // Principle 4
 // code example for Explicit Binding
 
+function strike() {
+    console.log(`${this.item}: ${this.hit}`);
+}
+
+let weaponOne = {
+    item: 'Sword',
+    hit: '*CLANG!*'
+}
+
+let weaponTwo = {
+    item: 'Club',
+    hit: '*THUNK!*'
+}
+
+strike.call(weaponOne);
+strike.call(weaponTwo);
